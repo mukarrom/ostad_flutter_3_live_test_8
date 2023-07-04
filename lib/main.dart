@@ -44,48 +44,49 @@ class _MyHomePageState extends State<MyHomePage> {
           return ListTile(
             onTap: () {
               showModalBottomSheet(
-                  constraints: const BoxConstraints(
-                      maxHeight: 200, minWidth: double.infinity),
-                  context: context,
-                  builder: (context) {
-                    return Padding(
-                      padding: const EdgeInsets.all(18),
-                      child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Contact Details',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w800,
-                              fontSize: 28,
-                            ),
+                constraints: const BoxConstraints(
+                    maxHeight: 200, minWidth: double.infinity),
+                context: context,
+                builder: (context) {
+                  return Padding(
+                    padding: const EdgeInsets.all(18),
+                    child: Column(
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Contact Details',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w800,
+                            fontSize: 28,
                           ),
-                          const SizedBox(
-                            height: 30,
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          'Name: ${contacts[index].name}',
+                          style: const TextStyle(
+                            fontSize: 16,
                           ),
-                          Text(
-                            'Name: ${contacts[index].name}',
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
+                        ),
+                        Text(
+                          'Email: ${contacts[index].email}',
+                          style: const TextStyle(
+                            fontSize: 16,
                           ),
-                          Text(
-                            'Email: ${contacts[index].email}',
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
+                        ),
+                        Text(
+                          'Phone Number: ${contacts[index].phone}',
+                          style: const TextStyle(
+                            fontSize: 16,
                           ),
-                          Text(
-                            'Phone Number: ${contacts[index].phone}',
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  });
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
             },
             title: Text(contacts[index].name),
           );
@@ -95,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-/// tasks model
+/// Contact model
 class Contact {
   String name, email, phone;
   Contact(this.name, this.email, this.phone);
